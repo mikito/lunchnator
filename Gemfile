@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'jbuilder', '~> 2.0'
+gem 'term-ansicolor'
 
 # ActiveRecord Ext
 gem 'mysql2', '~> 0.3.20'
