@@ -3,7 +3,30 @@
     <h3 class="panel-title">今日のランチはここに決定しました</h3>
   </div>
   <div class="panel-body">
-    <%= @restaurant.name %>
+  	<table class="table table-striped table-hover ">
+      <tbody>
+      	<tr>
+      		<td>
+      			<%= link_to @restaurant.name , @restaurant.address %>
+      		</td>
+    		</tr>
+    		<tr>
+      		<td>
+      			ランチタイム<br>
+      			<%= @restaurant.opentime %>
+      		</td>
+    		</tr>
+    		<tr class="info">
+      		<td>
+        		<%= image_tag @restaurant.image_url_1 , :size => '200x200' %>
+      		</td>
+      		<td>
+        	<%= image_tag @restaurant.image_url_2 , :size => '200x200' %>
+      		</td>
+      	</tr>
+      </tbody>
+    </table> 
   </div>
 </div>
+
 
