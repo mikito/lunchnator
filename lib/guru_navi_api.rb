@@ -3,7 +3,7 @@ class GuruNaviApi
   base_uri 'http://api.gnavi.co.jp'
   KEY_ID = ENV["GURU_NAVI_KEY_ID"]
 
-  def self.restaurants(query = {})
+  def self.restaurants(query: {})
     merged_query = default_query.merge!(lunch: 1).merge!(query)
     res = get("/RestSearchAPI/20150630", query: merged_query)
     data_list = JSON.parse(res.body)["rest"]
