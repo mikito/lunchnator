@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Essentials
 gem 'rails', '4.2.4'
+gem 'rails-i18n', '~> 4.0.0'
 gem 'jbuilder', '~> 2.0'
 
 # ActiveRecord Ext
