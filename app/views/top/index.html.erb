@@ -2,7 +2,7 @@
   <tbody>
 <% @restaurants.each do |restaurant| %>
     <tr class="info">
-      <td><%= link_to restaurant.name , restaurant.url %></td>
+      <td><%= link_to restaurant.name , restaurant.url, target: "_blank" %></td>
       </tr><tr>
       <td>
         ランチタイム<br>
@@ -24,6 +24,6 @@
       </tr>
 <% end %>
 </tbody>
-</table> 
+</table>
 
 <%= paginate @restaurants %>
