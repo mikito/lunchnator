@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'jbuilder', '~> 2.0'
+gem 'dotenv-rails'
 gem 'term-ansicolor'
 
 # ActiveRecord Ext
@@ -25,8 +26,11 @@ gem 'turbolinks'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 1.3.0'
 
-# views
+# Views
 gem 'formtastic'
+
+# API
+gem 'httparty'
 
 # Deployment
 gem 'capistrano-rails'

@@ -1,4 +1,5 @@
 .rspec
+.env
 /log
 /tmp
 /public/system
