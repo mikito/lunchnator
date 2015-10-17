@@ -3,7 +3,9 @@ class RestaurantsController < ApplicationController
   end
 
   def draw
-    ids = current_user.restaurants.pluck(:id)
+    longitude = params[:data][:longitude].to_f
+    latitude = params[:data][:latitude].to_f
+    ids = current_user.restaurants.around(longitude, latitude).pluck(:id)
     render :empty and return if ids.empty?
 
     @restaurant = Restaurant.find(ids.sample)
