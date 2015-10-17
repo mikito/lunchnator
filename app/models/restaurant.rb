@@ -17,6 +17,14 @@
 #
 
 class Restaurant < ActiveRecord::Base
+  scope :around, ->(longitude, latitude) {
+    long_to_m = 3000.0/111136.0
+    lati_to_m = 3000.0/111325.0
+    long_range = (longitude - long_to_m)..(longitude + long_to_m)
+    lati_range = (latitude - lati_to_m)..(latitude + lati_to_m)
+    where(longitude: long_range, latitude: lati_range)
+  }
+
   def self.build_from_api(json)
     image_urls = json.delete(:image_url)
     code = json.delete(:code)

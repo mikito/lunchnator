@@ -1,0 +1,9 @@
+<script>
+navigator.geolocation.getCurrentPosition(function(position) {
+  $("#search_latitude").val(position.coords.latitude);
+  $("#search_longitude").val(position.coords.longitude);
+  $.post("<%= draw_restaurants_path %>", { data: position.coords }).done(function(data) {
+    $("body").html(data);
+  });
+});
+</script>
