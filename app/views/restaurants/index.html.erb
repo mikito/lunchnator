@@ -1,9 +1,13 @@
+<div id="main-content">
+  <div style="text-align: center; padding-top: 50px;">Now loading...</div>
+</div>
+
 <script>
 navigator.geolocation.getCurrentPosition(function(position) {
   $("#search_latitude").val(position.coords.latitude);
   $("#search_longitude").val(position.coords.longitude);
   $.post("<%= draw_restaurants_path %>", { data: position.coords }).done(function(data) {
-    $("body").html(data);
+    $("#main-content").html(data);
   });
 });
 </script>
