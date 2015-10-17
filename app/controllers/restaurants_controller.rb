@@ -1,4 +1,4 @@
-class RestaurantsController < ApplicationController
+class RestaurantsController < BaseController 
   def draw
     ids = current_user.restaurants.pluck(:id)
 
