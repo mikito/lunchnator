@@ -10,7 +10,7 @@
   <tbody>
 <% @restaurants.each do |restaurant| %>
     <tr class="info">
-      <td><%= link_to restaurant.name , restaurant.address %></td>
+      <td><%= link_to restaurant.name , restaurant.url %></td>
       <td></td>
       <td>
         <%= image_tag restaurant.image_url_1 , :size => '256x256' %>
