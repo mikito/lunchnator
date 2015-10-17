@@ -48,6 +48,31 @@ namespace :application do
     end
   end
 
+  task :update do
+    begin
+      FileUtils.touch('tmp/pids/reset.pid')
+      puts "\n"
+
+      each_task "Running \`bundle install\`" do
+        system "bundle install >/dev/null 2>&1"
+      end
+
+      each_task "Clearing logs" do
+        Rake::Task['log:clear'].invoke
+      end
+
+      each_task "Clearing /tmp" do
+        Rake::Task['tmp:clear'].invoke
+      end
+
+      each_task "Rebuilding Database" do
+        Rake::Task['db:migrate'].invoke
+      end
+    ensure
+      FileUtils.rm_f('tmp/pids/reset.pid')
+    end
+  end
+
   task test: :environment do
     ENV['RAILS_ENV'] = "test"
     Rake::Task['application:reset'].invoke
