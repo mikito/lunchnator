@@ -28,6 +28,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Views
 gem 'formtastic'
+gem 'table_for_collection'
 
 # API
 gem 'httparty'

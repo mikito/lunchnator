@@ -3,4 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+  resources :favorites do
+    collection do
+      post :search
+    end
+  end
 end

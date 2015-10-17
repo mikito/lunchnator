@@ -1,0 +1,23 @@
+<%= form_for('search', method: :get, html: { class: "form-horizontal" }) do |f| %>
+  <div class="input-group">
+    <%= f.text_field :freeword, class: "form-control", placeholder: "フリーワード検索", value: params.fetch(:search, {})[:freeword] %>
+    <span class="input-group-btn">
+      <%= f.submit value: "検索", class: "btn btn-default" %>
+    </span>
+  </div>
+<% end %>
+
+<% if @restaurants %>
+<br>
+<div class="panel panel-default">
+  <div class="panel-heading">検索結果</div>
+  <div class="panel-body">
+    <%= table_for @restaurants, html: { class: "table table-striped table-condensed" } do -%>
+      <% column(title: "店舗名") { |c| link_to(c.name, c.url, target: "_blank") } %>
+      <% column(title: "", html: { td: { style: "text-align: right;" }}) do |c| %>
+        <% link_to("追加", c.url, method: :post, class: "btn btn-primary btn-xs") %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<% end %>
