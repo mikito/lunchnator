@@ -5,8 +5,10 @@
       <td><%= link_to restaurant.name , restaurant.url, target: "_blank" %></td>
       </tr><tr>
       <td>
-        ランチタイム<br>
-      	<%= restaurant.opentime %>
+        <small>
+          ランチタイム<br>
+      	  <%=raw restaurant.opentime %>
+        </small>
       </td>
       </tr><tr>
       <td>
@@ -15,10 +17,10 @@
       </tr><tr>
       <td>
       	<% if restaurant.image_url_1? && restaurant.image_url_1 != "{}" %>
-        <%= image_tag restaurant.image_url_1 , :size => '256x256' %>
+        <%= image_tag restaurant.image_url_1 , :size => '128x128' %>
         <% end %>
         <% if restaurant.image_url_2? && restaurant.image_url_2 != "{}" %>
-        <%= image_tag restaurant.image_url_2 , :size => '256x256' %>
+        <%= image_tag restaurant.image_url_2 , :size => '128x128' %>
         <% end %>
       </td>
       </tr>
