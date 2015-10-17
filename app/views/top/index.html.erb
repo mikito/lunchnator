@@ -1,1 +1,25 @@
-昼飯きめるアプリ
+昼飯きめるアプリ<br>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>お店名</th>
+      <th></th>
+      <th>写真</th>
+      <th>場所</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @restaurants.each do |restaurant| %>
+    <tr class="info">
+      <td><%= link_to restaurant.name , restaurant.address %></td>
+      <td></td>
+      <td>
+        <%= image_tag restaurant.image_url_1 , :size => '256x256' %>
+        <%= image_tag restaurant.image_url_2 , :size => '256x256' %>
+      </td>
+      <td></td>
+      </tr>
+<% end %>
+</tbody>
+</table> 
