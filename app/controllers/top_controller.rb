@@ -1,2 +1,2 @@
-class TopController < ApplicationController
+class TopController < BaseController
 end
