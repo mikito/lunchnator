@@ -7,6 +7,7 @@ class GuruNaviApi
     merged_query = default_query.merge!(lunch: 1).merge!(query)
     res = get("/RestSearchAPI/20150630", query: merged_query)
     data_list = JSON.parse(res.body)["rest"] || []
+    data_list = [data_list] if data_list.is_a?(Hash)
     data_list.map do |data|
       Restaurant.build_from_api(data.with_indifferent_access)
     end
