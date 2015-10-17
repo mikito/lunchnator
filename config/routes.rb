@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     collection do
       post :search
     end
+  resources :restaurants, :only => [] do
+     collection do
+       get 'draw'
+     end
   end
 end
