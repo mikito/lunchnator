@@ -18,6 +18,7 @@ gem 'devise-i18n'
 # Assets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootswatch-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'coffee-rails', '~> 4.1.0'
