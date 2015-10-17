@@ -10,7 +10,7 @@ class FavoritesController < BaseController
     restaurant = Restaurant.find_by(gid: params[:gid])
     restaurant||= GuruNaviApi.restaurants(query: { id: params[:gid] }).first
     current_user.favorites.find_or_create_by!(restaurant: restaurant)
-    redirect_to action: :index, notice: "#{restaurant.name}をお気に入りに追加しました"
+    redirect_to root_path, notice: "#{restaurant.name}をお気に入りに追加しました"
   end
 
   def destroy
