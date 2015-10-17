@@ -10,6 +10,10 @@ gem 'activerecord-colored_log_subscriber'
 gem 'kaminari'
 gem 'kaminari-i18n'
 
+# Authentication
+gem 'devise'
+gem 'devise-i18n'
+
 # Assets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
