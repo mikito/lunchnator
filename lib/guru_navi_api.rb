@@ -4,7 +4,7 @@ class GuruNaviApi
   KEY_ID = ENV["GURU_NAVI_KEY_ID"]
 
   def self.restaurants(query: {})
-    merged_query = default_query.merge!(lunch: 1).merge!(query)
+    merged_query = default_query.merge!(lunch: 1, hit_per_page: 30).merge!(query)
     res = get("/RestSearchAPI/20150630", query: merged_query)
     data_list = JSON.parse(res.body)["rest"] || []
     data_list = [data_list] if data_list.is_a?(Hash)

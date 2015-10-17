@@ -9,6 +9,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :address, null: false
       t.string :opentime
       t.string :areaname_s, null: false
+      t.string :category_name_l, null: false
       t.string :image_url_1
       t.string :image_url_2
     end
